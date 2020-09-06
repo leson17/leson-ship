@@ -11,8 +11,7 @@
     "prettier/flowtype",
     "prettier/react",
     "prettier/standard",
-    "prettier/unicorn",
-    "prettier/vue"
+    "prettier/unicorn"
   ],
   "plugins": [
     "@typescript-eslint",
@@ -20,8 +19,7 @@
     "flowtype",
     "react",
     "standard",
-    "unicorn",
-    "vue"
+    "unicorn"
   ],
   "parserOptions": {
     "sourceType": "module",

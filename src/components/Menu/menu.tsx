@@ -2,7 +2,7 @@
  * @Description: Menu
  * @Author: Linxian Hong
  * @Date: 2020-09-05 19:56:06
- * @LastEditTime: 2020-09-07 02:10:09
+ * @LastEditTime: 2020-09-07 14:47:34
  * @LastEditors: Linxian Hong
  */
 import React, {
@@ -78,17 +78,15 @@ const Menu: React.FC<MenuProps> = props => {
   const passedContext: IMenuContext = {
     index: currentActive ? currentActive : '0',
     mode,
-    // TODO: 回调方法是怎么传递给 subMenu 组件的，不明白？？？
     onSelect: handleClick,
     defaultOpenSubMenus,
   };
 
   const renderChildren = () => {
     return React.Children.map(children, (child, index) => {
-      // TODO:child为什么取不到type,需要child as React.FunctionComponentElement.不懂???????????????
       const childElement = child as FunctionComponentElement<MenuItemProps>;
-
       const { displayName } = childElement.type;
+
       if (displayName && ['MenuItem', 'SubMenu'].includes(displayName)) {
         return React.cloneElement(childElement, {
           index: index.toString(),

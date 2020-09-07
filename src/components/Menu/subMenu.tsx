@@ -2,7 +2,7 @@
  * @Description: subMenu
  * @Author: Linxian Hong
  * @Date: 2020-09-06 21:12:56
- * @LastEditTime: 2020-09-07 02:03:30
+ * @LastEditTime: 2020-09-07 15:13:16
  * @LastEditors: Linxian Hong
  */
 import React, {
@@ -53,7 +53,11 @@ const SubMenu: React.FC<SubMenuProps> = props => {
 
   useEffect(() => {
     console.log('subMenu is opened: ', menuOpen);
-  }, [menuOpen]);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [menuOpen, timer]);
 
   const clickEvents =
     context.mode === 'vertical' ? { onClick: handleClick } : {};

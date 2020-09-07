@@ -18,7 +18,7 @@ const App: React.FC = () => {
       <div>菜单导航组件</div>
       {/* // ------- 菜单组件 ------- */}
       <Menu
-        mode={'vertical'}
+        mode={'horizontal'}
         onSelect={index => alert(index)}
         defaultOpenSubMenus={['3']}
       >
